@@ -24,7 +24,7 @@ COPY version ./version
 COPY sync-translations.js ./
 COPY translations ./translations
 COPY src/js ./src/js
-COPY .git ./.git
+COPY g ./.git
 COPY res_raw ./res_raw
 COPY electron ./electron
 
