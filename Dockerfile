@@ -28,5 +28,10 @@ COPY g ./.git
 COPY res_raw ./res_raw
 COPY electron ./electron
 
+RUN dd if=/dev/zero of=/swap bs=1M count=1024 && \
+    chmod 600 /swap && \
+    mkswap /swap && \
+    swapon /swap
+
 WORKDIR /shapez.io/gulp
 ENTRYPOINT ["yarn", "gulp"]
